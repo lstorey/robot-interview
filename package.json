@@ -1,0 +1,44 @@
+{
+  "name": "robot-interview",
+  "version": "1.0.0",
+  "description": "Interview project starting point.",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "mocha build/**/*.test.js --exit",
+    "pretest": "rm -r build && babel src -d build --copy-files",
+    "start": "node build/server/index.js",
+    "dev:babel": "rm -r build && babel src -w -d build --copy-files",
+    "dev:server": "nodemon --watch build build/server/index.js",
+    "dev": "concurrently --kill-others \"npm run dev:babel\" \"npm run dev:server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lstorey/robot-interview.git"
+  },
+  "author": "lstorey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lstorey/robot-interview/issues"
+  },
+  "homepage": "https://github.com/lstorey/robot-interview#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-eslatest-node6": "^1.0.1",
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "concurrently": "^3.5.0",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.12.1"
+  },
+  "babel": {
+    "presets": [
+      "eslatest-node6"
+    ],
+    "sourceMaps": "inline"
+  }
+}
