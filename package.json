@@ -5,10 +5,10 @@
   "main": "server/index.js",
   "scripts": {
     "test": "mocha build/**/*.test.js --exit",
-    "pretest": "rm -r build && babel src -d build --copy-files",
+    "pretest": "rimraf build && babel src -d build --copy-files",
     "start": "node build/server/index.js",
-    "dev:babel": "rm -r build && babel src -w -d build --copy-files",
-    "dev:server": "nodemon --watch build build/server/index.js",
+    "dev:babel": "babel src -w -d build --copy-files",
+    "dev:server": "nodemon --delay 2 --watch build build/server/index.js",
     "dev": "concurrently --kill-others \"npm run dev:babel\" \"npm run dev:server\""
   },
   "repository": {
@@ -33,7 +33,8 @@
     "chai-http": "^3.0.0",
     "concurrently": "^3.5.0",
     "mocha": "^4.0.1",
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.12.1",
+    "rimraf": "^2.6.2"
   },
   "babel": {
     "presets": [
