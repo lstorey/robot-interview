@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/lstorey/robot-interview#readme",
   "dependencies": {
+    "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.2",
     "express": "^4.16.2"
   },
@@ -37,7 +38,8 @@
   },
   "babel": {
     "presets": [
-      "eslatest-node6"
+      "eslatest-node6",
+      "react"
     ],
     "sourceMaps": "inline"
   }
